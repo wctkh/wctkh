@@ -200,9 +200,9 @@
         
             
             <p>공통으로 사용할 VO 에 만들면 좋을 듯</p>
-<p>CommonVo.java 파일<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> String defaultValue;  <span class="comment">//변수 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDefaultValue</span><span class="params">(HttpSession session)</span> </span>&#123;  <span class="comment">// set 설정</span></div><div class="line">  setUserId((String) session.getAttribute(<span class="string">"userId"</span>));</div><div class="line">  setUserGroup((String) session.getAttribute(<span class="string">"userGroup"</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>logInController.java 에 세션 설정<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">session.setAttribute(<span class="string">"userId"</span>, userId);</div><div class="line">session.setAttribute(<span class="string">"userGroup"</span>, userGroup);</div></pre></td></tr></table></figure></p>
-<p>dataController.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">siteVO.setDefaultValue(session);  <span class="comment">// 이렇게 하면 세션에 있는 값 셋팅 됨</span></div></pre></td></tr></table></figure></p>
+<p></p><h4>CommonVo.java 파일</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> String defaultValue;  <span class="comment">//변수 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDefaultValue</span><span class="params">(HttpSession session)</span> </span>&#123;  <span class="comment">// set 설정</span></div><div class="line">  setUserId((String) session.getAttribute(<span class="string">"userId"</span>));</div><div class="line">  setUserGroup((String) session.getAttribute(<span class="string">"userGroup"</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>logInController.java 에 세션 설정</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">session.setAttribute(<span class="string">"userId"</span>, userId);</div><div class="line">session.setAttribute(<span class="string">"userGroup"</span>, userGroup);</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>dataController.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">siteVO.setDefaultValue(session);  <span class="comment">// 이렇게 하면 세션에 있는 값 셋팅 됨</span></div></pre></td></tr></table></figure><p></p>
 
         
         </div>
@@ -213,7 +213,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciy5g4j8x0000esv629c79x51" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciy5gte740000vwv6y7izmmvw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -344,7 +344,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-특수문자제거/" data-id="ciy5g4j9h0005esv6tpjlnru5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-특수문자제거/" data-id="ciy5gte7o0005vwv6w14r713v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -465,7 +465,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>변수가 숫자만인지 체크<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">numberChk</span><span class="params">(String str)</span></span>&#123;</div><div class="line">    <span class="keyword">boolean</span> chkBool = <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">char</span> chkStr;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++)&#123;</div><div class="line">        chkStr = str.charAt(i);</div><div class="line">        <span class="keyword">if</span>(chkStr &lt; <span class="number">48</span> || <span class="number">57</span> &lt; chkStr)&#123;</div><div class="line">            chkBool = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> chkBool;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+            <p></p><h4>변수가 숫자만인지 체크</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">numberChk</span><span class="params">(String str)</span></span>&#123;</div><div class="line">    <span class="keyword">boolean</span> chkBool = <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">char</span> chkStr;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++)&#123;</div><div class="line">        chkStr = str.charAt(i);</div><div class="line">        <span class="keyword">if</span>(chkStr &lt; <span class="number">48</span> || <span class="number">57</span> &lt; chkStr)&#123;</div><div class="line">            chkBool = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> chkBool;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
 
         
         </div>
@@ -476,7 +476,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-숫자체크/" data-id="ciy5g4j930001esv6f6endziy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-숫자체크/" data-id="ciy5gte7a0001vwv6s0mm0mdm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -609,7 +609,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-엑셀다운로드/" data-id="ciy5g4j9c0004esv61suunvbz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-엑셀다운로드/" data-id="ciy5gte7j0004vwv62ssiex83" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

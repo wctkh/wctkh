@@ -13,7 +13,7 @@ CommonVo.java 파일123456private String defaultValue;  //변수 선언public vo
 <meta property="og:site_name" content="TEST why not?">
 <meta property="og:description" content="공통으로 사용할 VO 에 만들면 좋을 듯
 CommonVo.java 파일123456private String defaultValue;  //변수 선언public void setDefaultValue(HttpSession session) &amp;#123;  // set 설정  setUserId((String) session.getAttribute(&quot;userId&quot;))">
-<meta property="og:updated_time" content="2017-01-20T06:29:59.057Z">
+<meta property="og:updated_time" content="2017-01-20T07:10:15.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="자바_세션">
 <meta name="twitter:description" content="공통으로 사용할 VO 에 만들면 좋을 듯
@@ -203,9 +203,9 @@ CommonVo.java 파일123456private String defaultValue;  //변수 선언public vo
         
             
             <p>공통으로 사용할 VO 에 만들면 좋을 듯</p>
-<p>CommonVo.java 파일<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> String defaultValue;  <span class="comment">//변수 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDefaultValue</span><span class="params">(HttpSession session)</span> </span>&#123;  <span class="comment">// set 설정</span></div><div class="line">  setUserId((String) session.getAttribute(<span class="string">"userId"</span>));</div><div class="line">  setUserGroup((String) session.getAttribute(<span class="string">"userGroup"</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>logInController.java 에 세션 설정<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">session.setAttribute(<span class="string">"userId"</span>, userId);</div><div class="line">session.setAttribute(<span class="string">"userGroup"</span>, userGroup);</div></pre></td></tr></table></figure></p>
-<p>dataController.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">siteVO.setDefaultValue(session);  <span class="comment">// 이렇게 하면 세션에 있는 값 셋팅 됨</span></div></pre></td></tr></table></figure></p>
+<p></p><h4>CommonVo.java 파일</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> String defaultValue;  <span class="comment">//변수 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDefaultValue</span><span class="params">(HttpSession session)</span> </span>&#123;  <span class="comment">// set 설정</span></div><div class="line">  setUserId((String) session.getAttribute(<span class="string">"userId"</span>));</div><div class="line">  setUserGroup((String) session.getAttribute(<span class="string">"userGroup"</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>logInController.java 에 세션 설정</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">session.setAttribute(<span class="string">"userId"</span>, userId);</div><div class="line">session.setAttribute(<span class="string">"userGroup"</span>, userGroup);</div></pre></td></tr></table></figure><p></p>
+<p></p><h4>dataController.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">siteVO.setDefaultValue(session);  <span class="comment">// 이렇게 하면 세션에 있는 값 셋팅 됨</span></div></pre></td></tr></table></figure><p></p>
 
         
         </div>
@@ -216,7 +216,7 @@ CommonVo.java 파일123456private String defaultValue;  //변수 선언public vo
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciy5g4j8x0000esv629c79x51" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciy5gte740000vwv6y7izmmvw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
