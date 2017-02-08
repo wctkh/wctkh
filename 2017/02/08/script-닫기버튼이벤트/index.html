@@ -5,22 +5,22 @@
     
     <title>&#39;script_닫기버튼이벤트&#39; | TEST why not?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="브라우저 닫기 버튼 클릭 시 이벤트(alt+f4,강제종료)
+    <meta name="description" content="브라우저 닫기 버튼 클릭 시 이벤트
     ie11 에서 마우스 좌표값을 가져오지 못해서    mousemove 마지막 값으로 닫기 버튼을 클릭 했는지 확인1&amp;lt;body onbeforeunload=&quot;sessionClose(event)&quot;&amp;gt;&amp;lt;/body&amp;gt;
-123456789101112131415161718192021222">
+1234567891011121314151617181920212223242526272829">
 <meta property="og:type" content="article">
 <meta property="og:title" content="'script_닫기버튼이벤트'">
 <meta property="og:url" content="https://wctkh.github.io/wctkh/2017/02/08/script-닫기버튼이벤트/index.html">
 <meta property="og:site_name" content="TEST why not?">
-<meta property="og:description" content="브라우저 닫기 버튼 클릭 시 이벤트(alt+f4,강제종료)
+<meta property="og:description" content="브라우저 닫기 버튼 클릭 시 이벤트
     ie11 에서 마우스 좌표값을 가져오지 못해서    mousemove 마지막 값으로 닫기 버튼을 클릭 했는지 확인1&amp;lt;body onbeforeunload=&quot;sessionClose(event)&quot;&amp;gt;&amp;lt;/body&amp;gt;
-123456789101112131415161718192021222">
-<meta property="og:updated_time" content="2017-02-08T06:18:31.007Z">
+1234567891011121314151617181920212223242526272829">
+<meta property="og:updated_time" content="2017-02-08T06:31:05.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="'script_닫기버튼이벤트'">
-<meta name="twitter:description" content="브라우저 닫기 버튼 클릭 시 이벤트(alt+f4,강제종료)
+<meta name="twitter:description" content="브라우저 닫기 버튼 클릭 시 이벤트
     ie11 에서 마우스 좌표값을 가져오지 못해서    mousemove 마지막 값으로 닫기 버튼을 클릭 했는지 확인1&amp;lt;body onbeforeunload=&quot;sessionClose(event)&quot;&amp;gt;&amp;lt;/body&amp;gt;
-123456789101112131415161718192021222">
+1234567891011121314151617181920212223242526272829">
     
 
     
@@ -200,7 +200,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p></p><h5>브라우저 닫기 버튼 클릭 시 이벤트(alt+f4,강제종료)</h5><p></p>
+            <p></p><h5>브라우저 닫기 버튼 클릭 시 이벤트</h5><p></p>
 <p></p><h6><br>    ie11 에서 마우스 좌표값을 가져오지 못해서<br>    mousemove 마지막 값으로 닫기 버튼을 클릭 했는지 확인<br></h6><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onbeforeunload</span>=<span class="string">"sessionClose(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		$(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			ie11Height = e.pageY;</div><div class="line">			ie11Width = e.pageX;</div><div class="line">			</div><div class="line">			<span class="keyword">if</span>(ie11Width==<span class="number">0</span> || (ie11Width &gt;<span class="built_in">document</span>.body.clientWidth ))&#123;</div><div class="line">				ie11Height = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sessionClose</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">		e = e || <span class="built_in">window</span>.event;</div><div class="line">		<span class="keyword">var</span> chkBrowser = event.clientY || event.screenY || event.pageY || event.pageX;</div><div class="line">		<span class="keyword">if</span>(ie11Height==<span class="number">0</span> || (e.clientY || e.screenY || e.pageY || e.pageX)&lt;<span class="number">0</span> )&#123;</div><div class="line">			<span class="keyword">if</span>(e)&#123;</div><div class="line">				$.ajax(&#123;</div><div class="line">					<span class="attr">url</span> : <span class="string">"sessionClose.jsp"</span>,</div><div class="line">					<span class="attr">type</span> : <span class="string">'POST'</span></div><div class="line">				&#125;);</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			$.ajax(&#123;</div><div class="line">				<span class="attr">url</span> : <span class="string">"sessionClose.jsp"</span>,</div><div class="line">				<span class="attr">type</span> : <span class="string">'POST'</span></div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
