@@ -142,7 +142,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                8
+                10
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -156,6 +156,256 @@
 
             
             <section id="main">
+    <article id="post-script-닫기버튼이벤트" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wctkh/2017/02/08/script-닫기버튼이벤트/">&#39;script_닫기버튼이벤트&#39;</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wctkh/2017/02/08/script-닫기버튼이벤트/">
+            <time datetime="2017-02-08T02:11:24.000Z" itemprop="datePublished">2017-02-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/wctkh/categories/script/">script</a>
+    </div>
+
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p></p><h5>브라우저 닫기 버튼 클릭 시 이벤트(alt+f4,강제종료)</h5><p></p>
+<p></p><h6><br>    ie11 에서 마우스 좌표값을 가져오지 못해서<br>    mousemove 마지막 값으로 닫기 버튼을 클릭 했는지 확인<br></h6><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onbeforeunload</span>=<span class="string">"sessionClose(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		$(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			ie11Height = e.pageY;</div><div class="line">			ie11Width = e.pageX;</div><div class="line">			</div><div class="line">			<span class="keyword">if</span>(ie11Width==<span class="number">0</span> || (ie11Width &gt;<span class="built_in">document</span>.body.clientWidth ))&#123;</div><div class="line">				ie11Height = <span class="number">0</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sessionClose</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">		e = e || <span class="built_in">window</span>.event;</div><div class="line">		<span class="keyword">var</span> chkBrowser = event.clientY || event.screenY || event.pageY || event.pageX;</div><div class="line">		<span class="keyword">if</span>(ie11Height==<span class="number">0</span> || (e.clientY || e.screenY || e.pageY || e.pageX)&lt;<span class="number">0</span> )&#123;</div><div class="line">			<span class="keyword">if</span>(e)&#123;</div><div class="line">				$.ajax(&#123;</div><div class="line">					<span class="attr">url</span> : <span class="string">"sessionClose.jsp"</span>,</div><div class="line">					<span class="attr">type</span> : <span class="string">'POST'</span></div><div class="line">				&#125;);</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			$.ajax(&#123;</div><div class="line">				<span class="attr">url</span> : <span class="string">"sessionClose.jsp"</span>,</div><div class="line">				<span class="attr">type</span> : <span class="string">'POST'</span></div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/08/script-닫기버튼이벤트/" data-id="ciywkeca50004lcv608ffdnq0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wctkh.github.io/wctkh/wctkh/2017/02/08/script-닫기버튼이벤트/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wctkh.github.io/wctkh/wctkh/2017/02/08/script-닫기버튼이벤트/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-이벤트" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/wctkh/2017/02/08/이벤트/">이벤트&#39;</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wctkh/2017/02/08/이벤트/">
+            <time datetime="2017-02-08T02:10:24.000Z" itemprop="datePublished">2017-02-08</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/08/이벤트/" data-id="ciywkecbp0005lcv604yie02i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wctkh.github.io/wctkh/wctkh/2017/02/08/이벤트/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wctkh.github.io/wctkh/wctkh/2017/02/08/이벤트/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-html-radio버튼" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -201,7 +451,7 @@
             
             <p></p><h3>radio를 버튼 형식으로 보이게</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</div><div class="line">.radioClass&#123;</div><div class="line">	<span class="attr">position</span>:absolute;</div><div class="line">	overflow:hidden;</div><div class="line">	z-index:<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line">.labelClass&#123;</div><div class="line">	<span class="attr">display</span>:inline-block;</div><div class="line">	text-align:center;</div><div class="line">	cursor:pointer;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure><p></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'radio'</span> <span class="attr">class</span>=<span class="string">"radioClass"</span> <span class="attr">id</span>=<span class="string">'radio'</span> <span class="attr">name</span>=<span class="string">'radioTest'</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">'labelClass'</span> <span class="attr">for</span>=<span class="string">'radio'</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">'spanClass'</span>&gt;</span>라디오버튼1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'radio'</span> <span class="attr">class</span>=<span class="string">"radioClass"</span> <span class="attr">id</span>=<span class="string">'radio1'</span> <span class="attr">name</span>=<span class="string">'radioTest'</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">'labelClass'</span> <span class="attr">for</span>=<span class="string">'radio1'</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">'spanClass'</span>&gt;</span>라디오버튼2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h1><p></p><h5>span에 백그라운드를 줘서 radio버튼을 안보이게 하면 될듯하다</h5><iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/2pn337dv/embedded/css,html,result/light" frameborder="0" allowfullscreen></iframe><p></p>
+<h1 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h1><p></p><h5>span에 백그라운드를 줘서 radio버튼을 안보이게 하면 될듯하다</h5><iframe scrolling="no" width="100%" height="300" src="jsfiddle.net/2pn337dv/embedded/css,html,result/light" frameborder="0" allowfullscreen></iframe><p></p>
 
         
         </div>
@@ -212,7 +462,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/html-radio버튼/" data-id="ciyo54m2h0000j8v6s3brdand" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/html-radio버튼/" data-id="ciywkec9u0001lcv6iitk5svl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -344,7 +594,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/제이쿼리-each/" data-id="ciyo54m49000cj8v6r5742ob3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/제이쿼리-each/" data-id="ciywkechv000nlcv64ewbemwr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -478,7 +728,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/hexo-파일생성/" data-id="ciyo54m370001j8v6wrvumyw2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/hexo-파일생성/" data-id="ciywkec9p0000lcv6rray7rsy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -606,7 +856,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/제이쿼리-사용하기/" data-id="ciyo54m4j000fj8v63o9gl062" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/02/02/제이쿼리-사용하기/" data-id="ciywkechy000olcv6zkdfdtr3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -741,7 +991,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciyo54m3l0004j8v65ck92phl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-세션/" data-id="ciywkechi000ilcv6ylly0gjo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -872,7 +1122,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-특수문자제거/" data-id="ciyo54m41000aj8v6e2icr12k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-특수문자제거/" data-id="ciywkechq000mlcv6i0135mfp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1004,7 +1254,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-숫자체크/" data-id="ciyo54m3u0005j8v6qtwh6lvq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-숫자체크/" data-id="ciywkechj000jlcv6iv7jd2ti" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1137,7 +1387,7 @@
 
 </div>
 
-    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-엑셀다운로드/" data-id="ciyo54m3w0006j8v648sklkc5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wctkh.github.io/wctkh/wctkh/2017/01/20/자바-엑셀다운로드/" data-id="ciywkecqz001flcv61cmppwhj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1227,6 +1477,44 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/wctkh/2017/02/08/script-닫기버튼이벤트/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/wctkh/categories/script/">script</a></p>
+                            <p class="item-title"><a href="/wctkh/2017/02/08/script-닫기버튼이벤트/" class="title">&#39;script_닫기버튼이벤트&#39;</a></p>
+                            <p class="item-date"><time datetime="2017-02-08T02:11:24.000Z" itemprop="datePublished">2017-02-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wctkh/2017/02/08/이벤트/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wctkh/2017/02/08/이벤트/" class="title">이벤트&#39;</a></p>
+                            <p class="item-date"><time datetime="2017-02-08T02:10:24.000Z" itemprop="datePublished">2017-02-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/wctkh/2017/02/02/html-radio버튼/" class="thumbnail">
     
     
@@ -1281,44 +1569,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/wctkh/2017/02/02/제이쿼리-사용하기/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/wctkh/categories/제이쿼리/">제이쿼리</a></p>
-                            <p class="item-title"><a href="/wctkh/2017/02/02/제이쿼리-사용하기/" class="title">&#39;제이쿼리_사용하기&#39;</a></p>
-                            <p class="item-date"><time datetime="2017-02-02T01:34:52.000Z" itemprop="datePublished">2017-02-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/wctkh/2017/01/20/자바-세션/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/wctkh/categories/java/">java</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/wctkh/categories/java/session/">session</a></p>
-                            <p class="item-title"><a href="/wctkh/2017/01/20/자바-세션/" class="title">자바_세션</a></p>
-                            <p class="item-date"><time datetime="2017-01-20T06:08:22.000Z" itemprop="datePublished">2017-01-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1328,7 +1578,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/session/">session</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/util/">util</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/엑셀/">엑셀</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/제이쿼리/">제이쿼리</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/">java</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/session/">session</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/util/">util</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/java/엑셀/">엑셀</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/script/">script</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/wctkh/categories/제이쿼리/">제이쿼리</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1337,7 +1587,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wctkh/archives/2017/02/">February 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wctkh/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wctkh/archives/2017/02/">February 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/wctkh/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1358,7 +1608,11 @@
             <ul>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="https://hexo.io/ko/docs/writing.html" target=_blank>Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jsfiddle.net/" target=_blank>jefiddle</a>
                     </li>
                 
             </ul>
